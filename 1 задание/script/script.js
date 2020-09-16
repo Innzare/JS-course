@@ -1,18 +1,19 @@
-let money = prompt('Ваш бюджет на месяц?','');
-let time = prompt('"Введите дату в формате YYYY-MM-DD','');
+let numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели', '');
 
-let ask1 = prompt('Введите обязательную статью расходов в этом месяце','');
-let ask2 = prompt('Во сколько обойдется?','');
+let personalMovieDB = {
+    count: numberOfFilms,
+    movies: {},
+    actors: {},
+    genres: [],
+    privat: false,
+};
 
-let appData = {
-    money,
-    timeData: time,
-    expenses: {
-        ask1: ask2,
-    },
-    optionalExpenses: {
+let lastFilm = prompt('Один из последних просмотренных фильмов', ''),
+    lastFilmRange = prompt('На сколько его оцените?', ''),
+    lastFilm2 = prompt('Один из последних просмотренных фильмов', ''),
+    lastFilmRange2 = prompt('На сколько его оцените?', '');
 
-    },
-    income: [],
-    savings: false,
-}
+personalMovieDB.movies[lastFilm] = lastFilmRange;
+personalMovieDB.movies[lastFilm2] = lastFilmRange2;
+
+console.log(personalMovieDB);
